@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>E-Portfolio for Foreign Language</title>
+  </head>
+  <body>
+    <div class="container">
+        <nav>
+            <div class="logo">FL 302</div>
+            <ul class=" navItem">
+              <li><a href = "index.html">Home</a></li>
+              <li><a href = "fl301.html">FL 301 Activities and Project</a></li>
+              <li><a href = "fl302.html">FL 302 Activities and Project</a></li>
+            </ul>
+        </nav>
+        <div class="video-container">
+            <h1>Foreign Language 302 Activities</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="feature-img">
+                        <img src="pictures/FL301 Virtual Background.png" width="100%">
+                        <img src="pictures/play-button.png" class="playButton">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity1.1.png">
+                            <img src="pictures/play-button.png" class="playButton" onclick="playVideo('activity2/AndradeBilly_MendozaMatthewBSIT3EG1_FL302_Activity1.mp4')">
+                        </div>
+                        <p>Activity 1</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="activity2/AndradeBillyBSIT3EG1_FL302_Activity2.jpg">
+                            <img src="pictures/play-button.png" class="playButton" id="myImage1" onclick="showImageActivity2()">
+                        </div>
+                        <p>Activity 2</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity3.1.png">
+                            <img src="pictures/play-button.png" class="playButton" onclick="playVideo('activity2/AndradeBillyBSIT3EG1_FL302_Activity3.mp4')">
+                        </div>
+                        <p>Activity 3</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="activity2/activity4.1.jpg">
+                            <img src="pictures/play-button.png" class="playButton" id="myImage2" onclick="showImageActivity4()">
+                        </div>
+                        <p>Activity 4</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity5.1.png">
+                            <img src="pictures/play-button.png" class="playButton"  onclick="playVideo('activity2/AndradeBilly_MendozaMatthewBSIT3EG1_FL302_Activity5.mp4')">
+                        </div>
+                        <p>Activity 5</p>
+                </div>
+        </div>
+        </div>
+        </div>
+        <div class="video-player" id="videoPlayer">
+            <video width="100%" controls autoplay id="myVideo">
+                <source src="activity/AndradeBillyBSIT3EG1_FL301_Activity1.mp4" type="video/mp4">
+            </video>
+            <img src="pictures/close.png" class="closeButton" onclick="stopVideo()">
+        </div>
+
+        <div class = "image-viewer1" id="imageViewer1">
+            <img id = "myImage1" src="activity2/AndradeBillyBSIT3EG1_FL302_Activity2.jpg" style="width: 100%;" >
+            <img src="pictures/close.png" class="closeButton" onclick="closeImage   ()">
+        </div>
+
+        <div class = "image-viewer2" id="imageViewer2">
+            <img id = "myImage2" src="activity2/activity4.1.jpg" style="width: 100%;" >
+            <img id = "myImage2" src="activity2/activity4.2.jpg" style="width: 100%;" >
+            <img src="pictures/close.png" class="closeButton" onclick="closeImage   ()">
+        </div>
+        <script>
+            var videoPlayer = document.getElementById("videoPlayer");
+            var myVideo = document.getElementById("myVideo");
+
+            var myImageViewer1 = document.getElementById("imageViewer1");
+            
+            var myImageViewer2 = document.getElementById("imageViewer2");
+
+            function stopVideo() {
+                videoPlayer.style.display = "none";
+                myVideo.pause();
+            }
+            function playVideo(file){
+                myVideo.src=file;
+                videoPlayer.style.display="block";
+            }
+            
+            function showImageActivity2() {
+            var image = document.getElementById("myImage1");
+            image.src = "activity2/AndradeBillyBSIT3EG1_FL302_Activity2.jpg";
+            myImageViewer1.style.display="block";
+            }
+
+            function showImageActivity4() {
+            var image = document.getElementById("myImage2");
+            image.src = "activity2/activity4.1.jpg";
+            image.src = "activity2/activity4.2.jpg";
+            myImageViewer2.style.display="block";
+            }
+
+            function closeImage() {
+                myImageViewer1.style.display="none"; 
+                myImageViewer2.style.display="none"; 
+            }
+
+
+        </script>
+  </body>
+</html>

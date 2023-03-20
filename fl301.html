@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>E-Portfolio for Foreign Language</title>
+  </head>
+  <body>
+    <div class="container">
+        <nav>
+            <div class="logo">FL 302</div>
+            <ul class=" navItem">
+              <li><a href = "index.html">Home</a></li>
+              <li><a href = "fl301.html">FL 301 Activities and Project</a></li>
+              <li><a href = "fl302.html">FL 302 Activities and Project</a></li>
+            </ul>
+        </nav>
+        <div class="video-container">
+            <h1>Foreign Language 301 Activities</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="feature-img">
+                        <img src="pictures/FL301 Virtual Background.png" width="100%">
+                        <img src="pictures/play-button.png" class="playButton">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity1.png">
+                            <img src="pictures/play-button.png" class="playButton" onclick="playVideo('activity/AndradeBillyBSIT3EG1_FL301_Activity1.mp4')">
+                        </div>
+                        <p>Activity 1</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity2.png">
+                            <img src="pictures/play-button.png" class="playButton"  onclick="playVideo('activity/AndradeBillyL.BSIT3E_FL301_Activity2.mp4')">
+                        </div>
+                        <p>Activity 2</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity3.png">
+                            <img src="pictures/play-button.png" class="playButton" onclick="playVideo('activity/AndradeBilly_MendozaMatthewBSIT3EG1_FL301_Activity3.mp4')">
+                        </div>
+                        <p>Activity 3</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity4.png">
+                            <img src="pictures/play-button.png" class="playButton" onclick="playVideo('activity/AndradeBillyBSIT3EG1_FL301_Activity4.mp4')">
+                        </div>
+                        <p>Activity 4</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity5.png">
+                            <img src="pictures/play-button.png" class="playButton"  onclick="playVideo('activity/AndradeBillyBSIT3EG1_FL301_Activity5.mp4')">
+                        </div>
+                        <p>Activity 5</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="activity/AndradeBillyBSIT3EG1_FL301_Activity6.jpg">
+                            <img src="pictures/play-button.png" class="playButton" id="myImage1" onclick="showImageActivity6()">
+                        </div>
+                        <p>Activity 6</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="activity/AndradeBillyBSIT3EG1_FL301_MyFamilyTree.jpg">
+                            <img src="pictures/play-button.png" class="playButton" id="myImage2" onclick="showImageActivity7()">
+                        </div>
+                        <p>Activity 7</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/activity8.png">
+                            <img src="pictures/play-button.png" class="playButton"  onclick="playVideo('activity/AndradeBilly_MendozaMatthewBSIT3EG1_FL301_Activity 8.mp4')">
+                        </div>
+                        <p>Activity 8</p>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="pictures/fl301project.png">
+                            <img src="pictures/play-button.png" class="playButton"  onclick="playVideo('activity/PROJECT IN FL.mp4')">
+                        </div>
+                        <p>FL 301 Project</p>
+                </div>
+        </div>
+        </div>
+        </div>
+        <div class="video-player" id="videoPlayer">
+            <video width="100%" controls autoplay id="myVideo">
+                <source src="activity/AndradeBillyBSIT3EG1_FL301_Activity1.mp4" type="video/mp4">
+            </video>
+            <img src="pictures/close.png" class="closeButton" onclick="stopVideo()">
+        </div>
+
+        <div class = "image-viewer1" id="imageViewer1">
+            <img id = "myImage1" src="activity/AndradeBillyBSIT3EG1_FL301_Activity6.jpg" style="width: 100%;" >
+            <img src="pictures/close.png" class="closeButton" onclick="closeImage   ()">
+        </div>
+
+        <div class = "image-viewer2" id="imageViewer2">
+            <img id = "myImage2" src="activity/AndradeBillyBSIT3EG1_FL301_MyFamilyTree.jpg" style="width: 100%;" >
+            <img src="pictures/close.png" class="closeButton" onclick="closeImage   ()">
+        </div>
+        <script>
+            var videoPlayer = document.getElementById("videoPlayer");
+            var myVideo = document.getElementById("myVideo");
+
+            var myImageViewer1 = document.getElementById("imageViewer1");
+            
+            var myImageViewer2 = document.getElementById("imageViewer2");
+
+            function stopVideo() {
+                videoPlayer.style.display = "none";
+                myVideo.pause();
+            }
+            function playVideo(file){
+                myVideo.src=file;
+                videoPlayer.style.display="block";
+            }
+            
+            function showImageActivity6() {
+            var image = document.getElementById("myImage1");
+            image.src = "activity/AndradeBillyBSIT3EG1_FL301_Activity6.jpg";
+            myImageViewer1.style.display="block";
+            }
+
+            function showImageActivity7() {
+            var image = document.getElementById("myImage2");
+            image.src = "activity/AndradeBillyBSIT3EG1_FL301_MyFamilyTree.jpg";
+            myImageViewer2.style.display="block";
+            }
+
+            function closeImage() {
+                myImageViewer1.style.display="none"; 
+                myImageViewer2.style.display="none"; 
+            }
+
+
+        </script>
+  </body>
+</html>
